@@ -17,7 +17,6 @@ import { NavUser } from "./nav-user";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
@@ -86,13 +85,12 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader className="bg-blue-100">
+      <SidebarHeader className="bg-blue-100  border-b">
         <NavUser user={data.user} />
       </SidebarHeader>
       <SidebarContent>
         <NavItems items={data.items} />
       </SidebarContent>
-      <SidebarFooter></SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
