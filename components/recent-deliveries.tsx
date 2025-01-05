@@ -14,7 +14,7 @@ export default function RecentDeliveries() {
   return (
     <section className="w-full p-2 sm:p-4 md:p-6">
       <h3 className="font-semibold mb-2">Recent Transactions</h3>
-      <div className="overflow-x-scroll rounded-lg border shadow ">
+      <div className="overflow-x-auto bg-white rounded-lg border shadow ">
         <Table className="table-auto">
           <TableHeader className="bg-blue-500 text-white">
             <TableRow>

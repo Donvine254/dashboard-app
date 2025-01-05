@@ -40,7 +40,7 @@ export default function RootLayout({
         <Toaster richColors closeButton theme="light" />
         <SidebarProvider>
           <AppSidebar />
-          <SidebarGroup className="bg-gray-100 !p-0">
+          <SidebarGroup className="bg-[#F8F9FA] !p-0">
             <SidebarHeader className="fixed top-0 h-16 z-50 bg-white w-full shadow">
               <div className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
                 <div className="flex items-center gap-2 px-4 h-full">

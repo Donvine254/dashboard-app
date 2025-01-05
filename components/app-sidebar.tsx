@@ -87,10 +87,10 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader className="bg-blue-100  border-b">
+      <SidebarHeader className="bg-[#F8F9FA] border-b">
         <NavUser user={data.user} />
       </SidebarHeader>
-      <SidebarContent className="overflow-y-scroll bg-gray-100">
+      <SidebarContent className="bg-gradient-to-b from-[#f6faff] via-[#f8f9fa] to-[#eaf3ff]">
         <NavItems items={data.items} />
       </SidebarContent>
       <SidebarFooter className="border-t">
