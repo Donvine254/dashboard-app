@@ -8,8 +8,7 @@ export default function Home() {
       <StatCards />
       <Charts />
       <hr />
-      <RecentDeliveries />
-      <p className="my-4">Something else down here </p>
+      {/* <RecentDeliveries /> */}
     </section>
   );
 }

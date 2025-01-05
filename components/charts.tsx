@@ -20,16 +20,11 @@ export default function Charts() {
     <div className="grid gap-4 md:grid-cols-2 p-2 sm:p-4 md:p-6">
       <div className="rounded-lg border bg-card p-2 md:p-4">
         <h3 className="font-semibold mb-4">Revenue Trend</h3>
-        <div className="h-[300px] text-xs sm:text-sm md:text-base">
+        <div className="h-[300px] text-xs sm:text-sm md:text-base ">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={revenueData}>
               <XAxis dataKey="month" />
-              <CartesianGrid stroke="#e4e4e7" />
-              <YAxis
-                dataKey="revenue"
-                domain={[(dataMin: number) => dataMin * 0.5, "dataMax"]}
-                tickFormatter={(value) => `${(value / 1000).toFixed(1)}k`}
-              />
+              <CartesianGrid stroke="#e4e4e7" strokeDasharray="3 3" />
               <Tooltip />
               <Legend
                 formatter={(value) => (
@@ -40,6 +35,23 @@ export default function Charts() {
                 dataKey="revenue"
                 fill="#2563eb"
                 radius={[4, 4, 0, 0]}
+                label={({ x, y, value }) => {
+                  return (
+                    <g transform={`translate(${x},${y})`}>
+                      <text
+                        x={0}
+                        y={0}
+                        dy={-5}
+                        dx={5}
+                        textAnchor="middle"
+                        fill="#2563eb"
+                        fontSize="12px"
+                        fontWeight="bold">
+                        {`${(value / 1000).toFixed(1)}K`}
+                      </text>
+                    </g>
+                  );
+                }}
                 barSize={20}>
                 {revenueData.map((entry, index) => {
                   const maxValue = Math.max(
@@ -68,9 +80,13 @@ export default function Charts() {
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={visitorsData}>
-              <XAxis dataKey="month" />
-              <YAxis />
-              <CartesianGrid stroke="#e4e4e7" />
+              <XAxis
+                dataKey="month"
+                style={{
+                  fontSize: "14px",
+                }}
+              />
+              <CartesianGrid stroke="#e4e4e7"strokeDasharray="3 3" />
               <Tooltip />
               <Area
                 type="monotone"
