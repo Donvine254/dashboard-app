@@ -1,4 +1,4 @@
-import StatCards from "@/components/stat-cards";
+import StatCards from "@/app/dashboard/stat-cards";
 import { AppSidebar } from "../../components/app-sidebar";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -6,7 +6,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import Charts from "@/components/charts";
+import Charts from "@/app/dashboard/charts";
+import RecentDeliveries from "./recent-deliveries";
 
 export default function Page() {
   return (
@@ -31,9 +32,11 @@ export default function Page() {
           </div>
         </header>
         <hr />
-        <div className="space-y-6">
+        <div className="space-y-2">
           <StatCards />
           <Charts />
+          <hr />
+          <RecentDeliveries />
         </div>
       </SidebarInset>
     </SidebarProvider>
