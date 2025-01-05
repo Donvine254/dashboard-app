@@ -17,9 +17,11 @@ import { NavUser } from "./nav-user";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import Image from "next/image";
 
 // This is sample data.
 const data = {
@@ -88,9 +90,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader className="bg-blue-100  border-b">
         <NavUser user={data.user} />
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="overflow-y-scroll bg-gray-100">
         <NavItems items={data.items} />
       </SidebarContent>
+      <SidebarFooter className="border-t">
+        <Image
+          src="/logo.svg"
+          width={100}
+          height={30}
+          priority
+          alt="sendit-logo"
+          className="mx-auto"
+        />
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
