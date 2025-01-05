@@ -3,8 +3,6 @@ import { revenueData, visitorsData } from "@/constants";
 import {
   Bar,
   BarChart,
-  Line,
-  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -12,6 +10,8 @@ import {
   CartesianGrid,
   Legend,
   Cell,
+  AreaChart,
+  Area,
 } from "recharts";
 import React from "react";
 
@@ -67,20 +67,27 @@ export default function Charts() {
         <h3 className="font-semibold mb-4 ">Site Visitors</h3>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={visitorsData}>
+            <AreaChart data={visitorsData}>
               <XAxis dataKey="month" />
               <YAxis />
               <CartesianGrid stroke="#e4e4e7" />
               <Tooltip />
-              <Line
+              <Area
                 type="monotone"
                 dataKey="visitors"
-                stroke="#82ca9d"
+                stroke="#2563eb"
                 strokeWidth={2}
+                fill="#2563eb"
+                fillOpacity={0.3}
                 dot={{ r: 4 }}
                 activeDot={{ r: 6 }}
               />
-            </LineChart>
+              <Legend
+                formatter={(value) => (
+                  <span style={{ color: "#2563eb" }}>{value}</span>
+                )}
+              />
+            </AreaChart>
           </ResponsiveContainer>
         </div>
       </div>
