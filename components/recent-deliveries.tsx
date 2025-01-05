@@ -8,6 +8,15 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { recentTransactions } from "@/constants";
+import {
+  DropdownMenuItem,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { MoreHorizontal, Eye } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function RecentDeliveries() {
   // table is causing the page to overflow
@@ -23,6 +32,7 @@ export default function RecentDeliveries() {
               <TableHead className="text-white">Date</TableHead>
               <TableHead className="text-white">Amount</TableHead>
               <TableHead className="text-white">Status</TableHead>
+              <TableHead className="text-white"></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -60,6 +70,30 @@ export default function RecentDeliveries() {
                     }`}>
                     {transaction.status}
                   </span>
+                </TableCell>
+                <TableCell>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="ghost" className="h-8 w-8 p-0">
+                        <span className="sr-only">Open menu</span>
+                        <MoreHorizontal className="h-4 w-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem>
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                          asChild>
+                          <Link href="#">
+                            {" "}
+                            <Eye className="mr-2 h-4 w-4" />
+                            View details
+                          </Link>
+                        </Button>
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </TableCell>
               </TableRow>
             ))}
