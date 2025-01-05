@@ -42,21 +42,23 @@ export default function RootLayout({
           <AppSidebar />
           <SidebarGroup className="bg-gray-100 !p-0">
             <SidebarHeader className="fixed top-0 h-16 z-50 bg-white w-full shadow">
-              <div className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12  ">
-                <div className="flex items-center gap-2 px-4">
+              <div className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
+                <div className="flex items-center gap-2 px-4 h-full">
                   <SidebarTrigger className="-ml-1" title="collapse menu" />
                   <Separator orientation="vertical" className="mr-2 h-4" />
-                  <div className="flex flex-col gap-1">
-                    <p className="font-semibold">🚀 Good morning Mary!</p>
-                    <p className="text-muted-foreground text-xs sm:text-sm">
+                  <p className="tracking-tight leading-tight inline-flex flex-col py-2 ">
+                    <span className="font-semibold leading-tight">
+                      Good morning Mary!
+                    </span>
+                    <span className="text-muted-foreground text-xs sm:text-sm">
                       {new Date().toLocaleDateString(undefined, {
                         weekday: "long",
                         month: "short",
                         day: "numeric",
                         year: "numeric",
                       })}
-                    </p>
-                  </div>
+                    </span>
+                  </p>
                 </div>
               </div>
             </SidebarHeader>
