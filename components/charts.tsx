@@ -16,6 +16,7 @@ import {
 import React from "react";
 
 export default function Charts() {
+  // TODO: change from recharts
   return (
     <div className="grid gap-4 md:grid-cols-2 p-2 sm:p-4 md:p-6">
       <div className="rounded-lg border bg-card p-2 md:p-4">
@@ -75,7 +76,7 @@ export default function Charts() {
           </ResponsiveContainer>
         </div>
       </div>
-      <div className="rounded-lg border bg-card p-6">
+      <div className="rounded-lg border bg-card p-2 md:p-4">
         <h3 className="font-semibold mb-4 ">Site Visitors</h3>
         <div className="h-[300px]">
           <ResponsiveContainer width="100%" height="100%">
@@ -86,7 +87,7 @@ export default function Charts() {
                   fontSize: "14px",
                 }}
               />
-              <CartesianGrid stroke="#e4e4e7"strokeDasharray="3 3" />
+              <CartesianGrid stroke="#e4e4e7" strokeDasharray="3 3" />
               <Tooltip />
               <Area
                 type="monotone"
