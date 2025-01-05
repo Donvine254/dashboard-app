@@ -8,6 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 export function NavItems({
   items,
@@ -30,10 +31,10 @@ export function NavItems({
               className={`hover:bg-blue-100 hover:text-blue-600 ${
                 pathname === item.url ? "bg-blue-100 text-blue-700" : ""
               }`}>
-              <a href={item.url} title={item.title}>
+              <Link href={item.url} title={item.title}>
                 <item.icon />
                 <span>{item.name}</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}

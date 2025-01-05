@@ -1,21 +1,21 @@
 export const revenueData = [
   { month: "Jan", revenue: 12000 },
   { month: "Feb", revenue: 15000 },
-  { month: "Mar", revenue: 18000 },
+  { month: "Mar", revenue: 13000 },
   { month: "Apr", revenue: 20000 },
-  { month: "May", revenue: 22000 },
+  { month: "May", revenue: 18000 },
   { month: "Jun", revenue: 25000 },
-  { month: "Jul", revenue: 28000 },
+  { month: "Jul", revenue: 22000 },
 ];
 
 export const visitorsData = [
   { month: "Jan", visitors: 500 },
   { month: "Feb", visitors: 600 },
   { month: "Mar", visitors: 800 },
-  { month: "Apr", visitors: 1200 },
-  { month: "May", visitors: 1500 },
-  { month: "Jun", visitors: 1800 },
-  { month: "Jul", visitors: 2000 },
+  { month: "Apr", visitors: 700 },
+  { month: "May", visitors: 1200 },
+  { month: "Jun", visitors: 600 },
+  { month: "Jul", visitors: 1000 },
 ];
 
 export const recentTransactions = [

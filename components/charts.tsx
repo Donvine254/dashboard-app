@@ -77,8 +77,7 @@ export default function Charts() {
                 dataKey="visitors"
                 stroke="#2563eb"
                 strokeWidth={2}
-                fill="#2563eb"
-                fillOpacity={0.3}
+                fill="#bfdbfe"
                 dot={{ r: 4 }}
                 activeDot={{ r: 6 }}
               />
