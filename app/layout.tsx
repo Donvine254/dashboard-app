@@ -6,7 +6,6 @@ import { Separator } from "@/components/ui/separator";
 import {
   SidebarGroup,
   SidebarHeader,
-  SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
