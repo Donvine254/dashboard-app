@@ -10,10 +10,11 @@ import {
 import { recentTransactions } from "@/constants";
 
 export default function RecentDeliveries() {
+  // table is causing the page to overflow
   return (
-    <section className="p-2 sm:p-4 md:p-6 shadow">
+    <section className=" max-w-full overflow-x-hidden p-2 sm:p-4 md:p-6">
       <h3 className="font-semibold mb-2">Recent Transactions</h3>
-      <Table className="rounded-lg border table-auto">
+      <Table className="rounded-lg border shadow table-auto overflow-x-auto">
         <TableHeader className="bg-blue-500 text-white">
           <TableRow>
             <TableHead className="text-white">ID</TableHead>
@@ -29,11 +30,13 @@ export default function RecentDeliveries() {
               <TableCell>#{String(transaction.id).padStart(3, "0")}</TableCell>
               <TableCell>{transaction.customer}</TableCell>
               <TableCell>
-                {new Date(transaction.date).toLocaleDateString(undefined, {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                })}
+                <p className="whitespace-nowrap">
+                  {new Date(transaction.date).toLocaleDateString(undefined, {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
               </TableCell>
               <TableCell>
                 {new Intl.NumberFormat("en-US", {

@@ -18,9 +18,9 @@ import React from "react";
 export default function Charts() {
   return (
     <div className="grid gap-4 md:grid-cols-2 p-2 sm:p-4 md:p-6">
-      <div className="rounded-lg border bg-card p-6">
+      <div className="rounded-lg border bg-card p-2 md:p-4">
         <h3 className="font-semibold mb-4">Revenue Trend</h3>
-        <div className="h-[300px]">
+        <div className="h-[300px] text-xs sm:text-sm md:text-base">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={revenueData}>
               <XAxis dataKey="month" />
